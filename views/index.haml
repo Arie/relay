@@ -1,0 +1,44 @@
+.row-fluid
+
+  .span3
+    %h2 
+      Create a new relay
+
+    %form.well.form{:method => "POST"}
+      %input.hidden{:name => '_method', :value => 'post'}
+      
+      %label
+        IP:Port
+        %input.span12{:name => 'address'}
+
+      %label
+        Password
+        %input.span12{:name => 'password'}
+
+      %button.btn.btn-primary{:type => 'submit'}
+        Start relay
+
+  .span5
+    %h2
+      Relay list
+    %table.table.table-striped
+      %thead
+        %tr
+          %th PID
+          %th Started at
+          %th Actions
+      - @relays.each do |relay|
+        %tr
+          
+          %td= relay[:pid]
+          %td= relay[:date_time]
+          %td
+            %a.btn.btn-danger{:href => "/kill/#{relay[:pid]}"}
+              kill
+            %a.btn.btn-info{:href => "/status/#{relay[:pid]}"}
+              status
+
+      - if @relays.none?
+        %tr
+          %td{:colspan => 3}
+            No running relays

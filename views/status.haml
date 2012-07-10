@@ -1,0 +1,4 @@
+%h2= "Status of relay with PID #{params[:id]}"
+%pre
+  - @lines.each do |line|
+    = line

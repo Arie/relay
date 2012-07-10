@@ -1,0 +1,5 @@
+# rails
+.bundle
+log
+tmp
+.sass-cache

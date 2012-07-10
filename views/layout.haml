@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %title FakkelBrigade relay interface
+    %link{:rel => 'stylesheet', :href => '/stylesheet.css', :type => 'text/css', :media => 'screen'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
+    %link{:rel => 'stylesheet', :href => '/css/bootstrap.min.css', :type => 'text/css', :media => 'screen'}
+  %body
+    .navbar
+      .navbar-inner
+        .container
+          %a.brand{:href => "/"}
+            FakkelBrigade relay interface
+          .nav-collapse
+            %ul.nav
+              %li.list
+                %a.list{:href => "/"}
+                  Relay list
+              %li.help
+                %a.help{:href => "/help"}
+                  Help
+
+
+    .container-fluid
+      - ['error', 'success', 'information'].each do |type|
+        - if flash[type]
+          .alert{:class => "alert-#{type}"}
+            = flash[type]
+      = yield
