@@ -1,16 +1,36 @@
 %h2 Help
 
 .row
-  .span6
+  .span7
     %h4 Lots of 'Invalid password' messages
     %p You forgot to enter the relaypassword, or maybe the server admin gave you the wrong one. Ask for the tv_relaypassword and tv_password of the server and try them both.
 
 .row
-  .span6
+  .span7
     %h4 GameUI_ServerRejectInvalidSteamCertLen
     %p You tried to connect to the gameserver, not the STV, you dummy.
 
 .row
-  .span6
+  .span7
     %h4 My relay disappeared!
     %p Either someone killed your poor relay, or it got killed by the automatic relay killer (happens every morning).
+
+.row
+  .span7
+    %h4 What's the connect info for my relay?
+    %p If you open the status screen for your relay you can see the connect info as follows:
+    %pre
+      :preserve
+        tv_status
+        --- SourceTV Status ---
+        Online 00:12, FPS 66.5, Version 4981 (Linux)
+        Relay "FakkelBrigade STV RELAY", connect to 176.9.138.143:27020
+        Game Time  7:01:45, Mod "tf", Map "ctf_turbine", Players 0
+        Local IP 176.9.138.143:27100, KB/sec In 2.8, Out 1.3
+        Local Slots 255, Spectators 0, Proxies 0
+        Total Slots 32, Spectators 0, Proxies 0
+        Recording to "auto-20120710-1303-ctf_turbine.dem", length 00:09.
+    %p The ip and port listed after 'Local IP' is the ip and port of the STV relay, this means you can connect using:
+    %pre connect 176.9.138.143:27100
+    %p But you can use the friendly name of that IP as well:
+    %pre connect fakkelbrigade.eu:27100
