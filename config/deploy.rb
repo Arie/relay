@@ -1,6 +1,5 @@
 set :application,     "relay"
 set :repository,      'https://github.com/Arie/relay.git'
-set :repository,      '.'
 set :main_server,     "fakkelbrigade.eu"
 set :user,            "tf2"
 set :deploy_to,       '/home/tf2/relay/'
@@ -13,7 +12,6 @@ set :rvm_type,        :system
 set :keep_releases,   5
 
 set :scm, :git
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 server "#{main_server}", :web, :app, :db, :primary => true
 
