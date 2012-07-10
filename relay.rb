@@ -83,7 +83,7 @@ class Relay < Sinatra::Base
 
           datetime  = DateTime.parse("#{date_string} #{time_string}")
           date = "#{datetime.year}-#{datetime.month}-#{datetime.day}"
-          time = "#{datetime.hour}:#{datetime.minute}:#{datetime.second}"
+          time = "#{sprintf("%02d", datetime.hour)}:#{sprintf("%02d", datetime.minute)}:#{sprintf("%02d", datetime.second)}"
 
           { :pid => pid, :date_time => "#{date} #{time}" }
         end
