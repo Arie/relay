@@ -52,12 +52,8 @@ class Relay < Sinatra::Base
   get '/status/:id' do
     id = params[:id].to_i
     `#{DEPLOYMENT_DIR}/relaystatus.rb #{id}`
-    f = File.new("/tmp/#{id}.status", "r:UTF-8")
-    @lines = []
-    f.lines.each do |line|
-      line.encode!('UTF-16', 'UTF-8', :invalid => :replace, :replace => '')
-      @lines << line.encode!('UTF-8', 'UTF-16')
-    end
+    f = File.open("/tmp/#{id}.status", "r:iso-8859-1")
+    @content = f.read
     haml :status
   end
 
