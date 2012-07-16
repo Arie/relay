@@ -5,7 +5,6 @@
       Create a new relay
 
     %form.well.form{:method => "POST"}
-      %input.hidden{:name => '_method', :value => 'post'}
       
       %label
         IP:Port
@@ -24,13 +23,17 @@
     %table.table.table-striped
       %thead
         %tr
-          %th PID
+          %th Relay IP:Port
+          %th STV IP:Port
+          %th Spectators
           %th Started at
           %th Actions
       - @relays.each do |relay|
         %tr
           
-          %td= relay[:pid]
+          %td= relay[:relay_ip_port]
+          %td= relay[:stv_ip_port]
+          %td= "#{relay[:spectators].to_i}/#{relay[:capacity].to_i}"
           %td= relay[:date_time]
           %td
             %a.btn.btn-danger{:href => "/kill/#{relay[:pid]}"}
@@ -40,5 +43,5 @@
 
       - if @relays.none?
         %tr
-          %td{:colspan => 3}
+          %td{:colspan => 5}
             No running relays

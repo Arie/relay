@@ -1,5 +1,5 @@
 set :application,     "relay"
-set :repository,      'https://github.com/Arie/relay.git'
+ set :repository,      'https://github.com/Arie/relay.git'
 set :main_server,     "fakkelbrigade.eu"
 set :user,            "tf2"
 set :deploy_to,       '/home/tf2/relay/'
@@ -32,4 +32,5 @@ end
 
 after "deploy:update_code", "rvm:trust_rvmrc"
 after "deploy:update_code", "relay:link_config"
+after "deploy:update_code", "thin:link_config"
 after "deploy", "deploy:cleanup"
