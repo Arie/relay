@@ -5,7 +5,8 @@ A web-interface to start STV relays
 ## Requirements
 
 * Ruby, preferbly 1.9, but other versions might work. You should use [ruby-build](https://github.com/sstephenson/ruby-build/) to install Ruby.
-* GNU Screen
+* GNU Screen to run the relays in
+* memcached to provide some simple caching for the web interface
 * A Source game dedicated server installation, only tested with TF2 on linux for now. 
 
 ## Installation
