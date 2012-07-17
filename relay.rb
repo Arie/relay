@@ -23,7 +23,6 @@ class Relay < Sinatra::Base
   use Rack::Cache
 
   get '/' do
-    cache_control :public, :max_age => 5
     statuslines = cache.fetch("statuslines", 1) {`#{DEPLOYMENT_DIR}/relaysrunning.rb`.lines.to_a }
     @relays = statuslines_to_array(statuslines)
     haml :index
