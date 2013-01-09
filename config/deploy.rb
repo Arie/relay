@@ -7,7 +7,7 @@ set :deploy_via,      :copy
 set :use_sudo,        false
 set :thin_config,     'config/thin.yml'
 set :branch,          'master'
-set :rvm_ruby_string, '1.9.3-p194@relay'
+set :rvm_ruby_string, '1.9.3@relay'
 set :rvm_type,        :system
 set :keep_releases,   5
 
