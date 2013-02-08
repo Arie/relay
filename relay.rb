@@ -153,7 +153,11 @@ class Relay < Sinatra::Base
       date_string = "#{yank_date_string[1]}-#{yank_date_string[0]}-#{yank_date_string[2]}"
       time_string = yank_date_line.split(" ")[2..3].join('').strip
 
-      datetime  = DateTime.parse("#{date_string} #{time_string}")
+      begin
+        datetime = DateTime.parse("#{date_string} #{time_string}")
+      rescue
+        datetime = DateTime.new(2007, 10, 9)
+      end
       euro_date = "#{datetime.year}-#{datetime.month}-#{datetime.day}"
       euro_time = "#{sprintf("%02d", datetime.hour)}:#{sprintf("%02d", datetime.minute)}:#{sprintf("%02d", datetime.second)}"
 
