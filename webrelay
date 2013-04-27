@@ -1,3 +1,2 @@
 cd $1
-export RDTSC_FREQUENCY=3411.000000
 screen -AmdS webrelay ./srcds_run -ip $5 -game tf -console +tv_maxclients 255 +exec relay.cfg +tv_port $4 +tv_relay $2 +password $3 +tv_autorecord 1 2>&1 > /tmp/$2.log

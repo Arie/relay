@@ -3,6 +3,6 @@ server:
   password: 'supersecretpasswordhere'
   deployment_dir: "/home/tf2/relay/current"
 runner:
-  installation_dir: "/home/tf2/stv_relay/orangebox"
+  installation_dir: "/home/tf2/stv_relay"
   ip: "176.9.138.143"
   start_port: "27100"
