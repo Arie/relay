@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 #Base for the app
 gem 'sinatra', :require => 'sinatra/base'
