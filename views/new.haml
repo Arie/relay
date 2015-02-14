@@ -1,0 +1,19 @@
+.row-fluid
+
+  .span3
+    %h2 
+      Create a new relay
+
+    %form.well.form{:method => "POST", :action => "/"}
+
+      %label
+        IP:Port
+        %input.span12{:name => 'address', :value => @ip_port}
+
+      %label
+        Password
+        %input.span12{:name => 'password', :value => @password}
+
+      %button.btn.btn-primary{:type => 'submit'}
+        Start relay
+

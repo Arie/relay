@@ -28,6 +28,12 @@ class Relay < Sinatra::Base
     haml :index
   end
 
+  get '/new' do
+    @ip_port = params[:ip_port]
+    @password = params[:password]
+    haml :new
+  end
+
   get '/help' do
     protected!
     haml :help
