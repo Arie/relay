@@ -1,2 +1,2 @@
 cd $1
-screen -AmdS webrelay ./srcds_run -ip $5 -game tf -console +tv_maxclients 255 +exec relay.cfg +tv_port $4 +tv_relay $2 +password $3 +tv_autorecord 1 2>&1 > /tmp/$2.log
+screen -AmdS webrelay ./srcds_run -ip $5 -game tf -console +tv_maxclients 255 +exec relay.cfg +tv_port $4 +tv_relay $2 +password $3 +tv_autorecord 1 -steam_dir /home/tf2/steam -steamcmd_script /home/tf2/steam/stv_relay.txt2>&1 > /tmp/$2.log
