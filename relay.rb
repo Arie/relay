@@ -23,12 +23,14 @@ class Relay < Sinatra::Base
   use Rack::Cache
 
   get '/' do
+    protected!
     statuslines = cache.fetch("statuslines", 1) {`#{DEPLOYMENT_DIR}/relaysrunning.rb`.lines.to_a }
     @relays = statuslines_to_array(statuslines[0..-3])
     haml :index
   end
 
   get '/new' do
+    protected!
     @ip_port = params[:ip_port]
     @password = params[:password]
     haml :new
