@@ -16,7 +16,7 @@ gem 'rack-cache'
 #Slightly more complicated caching
 gem 'dalli'
 #Ruby webserver
-gem 'thin'
+gem 'thin', '~> 1.7.2'
 
 group :development do
   #Debugging
