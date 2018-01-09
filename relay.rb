@@ -104,7 +104,7 @@ class Relay < Sinatra::Base
         log = status_log(pid)
         match = log.match(/Local\ IP\ \d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}:.\d{4,6}/)
         if match
-          relay_ip_port = match[-1].split(" ")[2].gsub(",", "")
+          relay_ip_port = match[-1].to_s.split(" ")[2].to_s.gsub(",", "")
           relay_ip    = relay_ip_port.split(":")[0]
           relay_port  = relay_ip_port.split(":")[1]
           friendly_name = ip_to_dns(relay_ip)
@@ -118,7 +118,7 @@ class Relay < Sinatra::Base
         log = status_log(pid)
         match = log.match(/Relay\ .* connect\ to\ \d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}:.\d{4,6}/)
         if match
-          stv_ip_port = match[-1].split(", connect to ")[1]
+          stv_ip_port = match[-1].to_s.split(", connect to ")[1].to_s
           stv_ip    = stv_ip_port.split(":")[0]
           stv_port  = stv_ip_port.split(":")[1]
           friendly_name = ip_to_dns(stv_ip)
@@ -132,7 +132,7 @@ class Relay < Sinatra::Base
         log = status_log(pid)
         match = log.match(/Local\ Slots\ \d{1,3}, Spectators\ \d{1,3}/)
         if match
-          spectators = match[-1].split(" ")[4]
+          spectators = match[-1].to_s.split(" ")[4]
         end
       end
     end
@@ -142,7 +142,7 @@ class Relay < Sinatra::Base
         log = status_log(pid)
         match = log.match(/Local\ Slots\ \d{1,3}, Spectators\ \d{1,3}/)
         if match
-          capacity = match[-1].split(" ")[2].gsub(',', '')
+          capacity = match[-1].to_s.split(" ")[2].to_s.gsub(',', '')
         end
       end
     end
