@@ -5,4 +5,4 @@ Bundler.require
 
 require './relay'
 
-Relay.run!
+run Relay.run!
