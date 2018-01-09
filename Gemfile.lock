@@ -14,7 +14,7 @@ GEM
     daemons (1.1.9)
     dalli (2.6.4)
     escape (0.0.4)
-    eventmachine (1.0.7)
+    eventmachine (1.2.5)
     haml (4.0.3)
       tilt
     highline (1.6.19)
@@ -72,3 +72,6 @@ DEPENDENCIES
   sass
   sinatra
   thin
+
+BUNDLED WITH
+   1.16.1
