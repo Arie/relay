@@ -25,7 +25,7 @@ class Relay < Sinatra::Base
   get '/' do
     protected!
     statuslines = cache.fetch("statuslines", 1) {`#{DEPLOYMENT_DIR}/relaysrunning.rb`.lines.to_a }
-    @relays = statuslines_to_array(statuslines[0..-3])
+    @relays = statuslines_to_array(statuslines[1..-2])
     haml :index
   end
 
