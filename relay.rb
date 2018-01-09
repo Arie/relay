@@ -154,7 +154,6 @@ class Relay < Sinatra::Base
         ip
       end
     end
-    memoize :ip_to_dns
 
     def yank_date_to_euro_date(yank_date_line)
       yank_date_string = yank_date_line.split(" ")[1].strip.split("/")
