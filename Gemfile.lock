@@ -15,7 +15,7 @@ GEM
     dalli (2.7.6)
     escape (0.0.4)
     eventmachine (1.2.5)
-    ffi (1.9.18)
+    ffi (1.11.1)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
